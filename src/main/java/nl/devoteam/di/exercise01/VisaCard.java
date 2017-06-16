@@ -1,4 +1,4 @@
-package nl.devoteam.di.excercise01;
+package nl.devoteam.di.exercise01;
 
 public class VisaCard {
     public void charge(int amount) {

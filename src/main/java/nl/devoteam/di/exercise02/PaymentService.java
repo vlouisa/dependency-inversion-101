@@ -1,4 +1,4 @@
-package nl.devoteam.di.excercise01;
+package nl.devoteam.di.exercise02;
 
 
 public class PaymentService {
