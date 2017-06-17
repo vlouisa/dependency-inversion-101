@@ -9,14 +9,14 @@ public class OrderApp {
     private static final Order ORDER = new Order("666");
 
     public static void main(String[] args) {
-        OrderDAO orderDAO = constructTheProperDAO();
-        OrderService orderService = new OrderService(orderDAO);
+        OrderService orderService = constructTheProperOrderService();
         orderService.register(ORDER);
 
     }
 
-    private static OrderDAO constructTheProperDAO() {
+    private static OrderService constructTheProperOrderService() {
         TransactionLog transactionLog = new FileTransactionLog();
-        return new OracleOrderDAO(transactionLog);
+        OrderDAO orderDAO = new OracleOrderDAO(transactionLog);
+        return new OrderService(orderDAO);
     }
 }
